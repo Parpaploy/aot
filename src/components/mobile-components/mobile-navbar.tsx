@@ -13,7 +13,9 @@ export default function MobileNavbar() {
       <div className="w-full min-h-20 fixed bottom-0 left-0 flex justify-between items-end">
         {/* Units */}
         <div
-          className={`h-full ${isActive("/units") ? "w-28 scale-125" : "w-22"}`}
+          className={`transition h-full ${
+            isActive("/units") ? "w-28 scale-125" : "w-22"
+          }`}
           style={isActive("/units") ? { marginBottom: `10px` } : {}}
           onClick={() => {
             navigator("/units");
@@ -29,7 +31,7 @@ export default function MobileNavbar() {
 
         {/* Titans */}
         <div
-          className={`h-full ${
+          className={`transition h-full ${
             isActive("/titans") ? "w-28 scale-135" : "w-24"
           }`}
           style={isActive("/titans") ? { marginBottom: `7px` } : {}}
@@ -47,7 +49,7 @@ export default function MobileNavbar() {
 
         {/* Homepage */}
         <div
-          className={`h-full flex flex-col justify-center items-center ${
+          className={`transition h-full flex flex-col justify-center items-center ${
             isActive("/") ? "w-48 scale-125" : "w-40"
           }`}
           style={isActive("/") ? { marginBottom: `7px` } : {}}
@@ -67,7 +69,9 @@ export default function MobileNavbar() {
 
         {/* Walls */}
         <div
-          className={`h-full ${isActive("/walls") ? "w-32 scale-135" : "w-28"}`}
+          className={`transition h-full ${
+            isActive("/walls") ? "w-32 scale-135" : "w-28"
+          }`}
           style={isActive("/walls") ? { marginBottom: `5px` } : {}}
           onClick={() => {
             navigator("/walls");
@@ -83,7 +87,7 @@ export default function MobileNavbar() {
 
         {/* Characters */}
         <div
-          className={`h-full ${
+          className={`transition h-full ${
             isActive("/characters") ? "w-28 scale-135" : "w-22"
           }`}
           style={isActive("/characters") ? { marginBottom: `5px` } : {}}
