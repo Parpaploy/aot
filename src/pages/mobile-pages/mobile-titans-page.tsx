@@ -13,7 +13,7 @@ export function MobileTitansPage() {
 
       <div className="min-h-screen w-full">
         <div
-          className="bg-red-950 w-full h-auto text-center font-bold text-5xl"
+          className="bg-red-950 w-full h-auto text-center font-bold text-5xl text-white"
           style={{ padding: `10px 0`, paddingBottom: `20px` }}
         >
           The Titans
