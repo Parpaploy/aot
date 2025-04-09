@@ -1,14 +1,20 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function MobileNavbar() {
   const navigator = useNavigate();
+  const location = useLocation();
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+
   return (
     <>
-      <div className="bg-[#3c0000] w-full min-h-14 fixed bottom-0 left-0 flex justify-center items-center"></div>
+      <div className="bg-[#3c0000] w-full min-h-12 fixed bottom-0 left-0 flex justify-center items-center"></div>
       <div className="w-full min-h-20 fixed bottom-0 left-0 flex justify-between items-end">
         {/* Units */}
         <div
-          className="w-22 h-full"
+          className={`h-full ${isActive("/units") ? "w-28 scale-125" : "w-22"}`}
+          style={isActive("/units") ? { marginBottom: `10px` } : {}}
           onClick={() => {
             navigator("/units");
           }}
@@ -23,7 +29,10 @@ export default function MobileNavbar() {
 
         {/* Titans */}
         <div
-          className="w-24 h-full"
+          className={`h-full ${
+            isActive("/titans") ? "w-28 scale-135" : "w-24"
+          }`}
+          style={isActive("/titans") ? { marginBottom: `7px` } : {}}
           onClick={() => {
             navigator("/titans");
           }}
@@ -38,7 +47,10 @@ export default function MobileNavbar() {
 
         {/* Homepage */}
         <div
-          className="w-40 h-full flex flex-col justify-center items-center"
+          className={`h-full flex flex-col justify-center items-center ${
+            isActive("/") ? "w-48 scale-125" : "w-40"
+          }`}
+          style={isActive("/") ? { marginBottom: `7px` } : {}}
           onClick={() => {
             navigator("");
           }}
@@ -55,7 +67,8 @@ export default function MobileNavbar() {
 
         {/* Walls */}
         <div
-          className="w-28 h-full"
+          className={`h-full ${isActive("/walls") ? "w-32 scale-135" : "w-28"}`}
+          style={isActive("/walls") ? { marginBottom: `5px` } : {}}
           onClick={() => {
             navigator("/walls");
           }}
@@ -70,7 +83,10 @@ export default function MobileNavbar() {
 
         {/* Characters */}
         <div
-          className="w-22 h-full"
+          className={`h-full ${
+            isActive("/characters") ? "w-28 scale-135" : "w-22"
+          }`}
+          style={isActive("/characters") ? { marginBottom: `5px` } : {}}
           onClick={() => {
             navigator("/characters");
           }}
